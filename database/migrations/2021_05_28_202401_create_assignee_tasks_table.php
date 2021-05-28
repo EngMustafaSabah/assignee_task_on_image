@@ -15,6 +15,12 @@ class CreateAssigneeTasksTable extends Migration
     {
         Schema::create('assignee_tasks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('department_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('project_id')->constrained();
+            $table->string('top');
+            $table->string('left');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
