@@ -4,8 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AssigneeTask extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+    protected $fillable = [
+        'department_id',
+        'user_id',
+        'project_id',
+        'top',
+        'left',
+    ];
 }
