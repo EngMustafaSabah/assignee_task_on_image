@@ -25,8 +25,12 @@ class AssigneeTaskFactory extends Factory
             'department_id' => $this->faker->numberBetween(1, 10),
             'user_id' => $this->faker->numberBetween(1, 10),
             'project_id' => $this->faker->numberBetween(1, 2),
+            'status_id' => $this->faker->numberBetween(1, 3),
+            'priority_id' => $this->faker->numberBetween(1, 3),
             'top' => $this->faker->numberBetween(5, 500),
             'left' => $this->faker->numberBetween(100, 500),
+            'name' => $this->faker->name,
+            'date' => $this->faker->date,
         ];
     }
 }

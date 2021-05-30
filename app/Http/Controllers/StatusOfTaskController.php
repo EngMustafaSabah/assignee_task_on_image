@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AssigneeTask;
-use App\Models\Project;
-use App\Models\Department;
-use App\Models\PriorityOfTask;
 use App\Models\StatusOfTask;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
-class ProjectController extends Controller
+class StatusOfTaskController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,9 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Dashboard', [
-            'project' => Project::all()
-        ]);
+        //
     }
 
     /**
@@ -32,6 +24,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
@@ -48,30 +41,21 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Project  $project
+     * @param  \App\Models\StatusOfTask  $statusOfTask
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show(StatusOfTask $statusOfTask)
     {
-        // return AssigneeTask::where('project_id', request('id'))->with('StatusOfTask')->get();
-        return Inertia::render('SingleProject', [
-            'project' => $project->find(request('id')),
-            'department' => Department::all(),
-            'progress' => '40%',
-            'status' => StatusOfTask::all(),
-            'priority' => PriorityOfTask::all(),
-            'users' => User::all(),
-            'assignee' => AssigneeTask::where('project_id', request('id'))->with('StatusOfTask')->get(),
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Project  $project
+     * @param  \App\Models\StatusOfTask  $statusOfTask
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function edit(StatusOfTask $statusOfTask)
     {
         //
     }
@@ -80,10 +64,10 @@ class ProjectController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Project  $project
+     * @param  \App\Models\StatusOfTask  $statusOfTask
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, StatusOfTask $statusOfTask)
     {
         //
     }
@@ -91,10 +75,10 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Project  $project
+     * @param  \App\Models\StatusOfTask  $statusOfTask
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy(StatusOfTask $statusOfTask)
     {
         //
     }

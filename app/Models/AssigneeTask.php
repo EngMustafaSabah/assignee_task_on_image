@@ -15,5 +15,13 @@ class AssigneeTask extends Model
         'project_id',
         'top',
         'left',
+        'status_id',
+        'priority_id',
+        'name',
+        'date',
     ];
+
+    public function StatusOfTask(){
+        return $this->belongsTo(StatusOfTask::class,'status_id', 'id');
+    }
 }

@@ -27,3 +27,11 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('/project/{id}', 'App\Http\Controllers\ProjectController@show')->name('project.single');
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('/project', 'App\Http\Controllers\ProjectController@index')->name('project');
+
+Route::middleware(['auth:sanctum'])
+    ->post('/assignee-task/', 'App\Http\Controllers\AssigneeTaskController@store')->name('assignee.create');

@@ -35,7 +35,23 @@ class AssigneeTaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        AssigneeTask::create(
+            $this->validate($request, [
+                'department_id' => 'required',
+                'user_id' => 'required',
+                'project_id' => 'required',
+                'status_id' => 'required',
+                'priority_id' => 'required',
+                'top' => 'required',
+                'left' => 'required',
+                'date' => 'required',
+                'name' => 'required',
+            ])
+        );
+
+        return redirect()->route('project');
+        return request();
     }
 
     /**
