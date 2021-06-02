@@ -16,22 +16,21 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return redirect(route('project'));
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return redirect(route('project'));
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])
-    ->get('/project/{id}', 'App\Http\Controllers\ProjectController@show')->name('project.single');
+    ->get('/project/{id}', 'App\Http\Controllers\ProjectController@show')
+    ->name('project.single');
+
 Route::middleware(['auth:sanctum', 'verified'])
-    ->get('/project', 'App\Http\Controllers\ProjectController@index')->name('project');
+    ->get('/project', 'App\Http\Controllers\ProjectController@index')
+    ->name('project');
 
 Route::middleware(['auth:sanctum'])
-    ->post('/assignee-task/', 'App\Http\Controllers\AssigneeTaskController@store')->name('assignee.create');
+    ->post('/assignee-task/', 'App\Http\Controllers\AssigneeTaskController@store')
+    ->name('assignee.create');
