@@ -13,6 +13,6 @@ class AssigneeTaskSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\AssigneeTask::factory(5)->create();
+        \App\Models\AssigneeTask::factory(10)->create();
     }
 }

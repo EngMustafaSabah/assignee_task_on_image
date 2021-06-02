@@ -24,9 +24,10 @@
             <div class="box green"><i class="fas fa-map-marker-alt"></i></div>
           </div>
           <div
-            v-for="(assignee,index) in assignee" :key="index"
-            :style="{ top: assignee.top, left: assignee.left }"
+            v-for="(assignee, index) in assignee"
+            :key="index"
             class="container"
+            :style="{ top: assignee.top, left: assignee.left }"
           >
             <div
               :style="{ backgroundColor: assignee.status_of_task.color }"
