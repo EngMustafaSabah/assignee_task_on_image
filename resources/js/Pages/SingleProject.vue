@@ -10,11 +10,8 @@
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg"></div>
         {{ project.name }}
-        {{ department[0].name }}
-        <!-- <img :src="'/storage/' + project.image" alt="" sizes="100%" srcset="" /> -->
         <main @click.prevent="point">
           <img sizes="100%" :src="'/storage/' + project.image" />
-          <!--             @click="toggleModel = !toggleModel" -->
           <div
             :style="{ top: this.mystyle.offsetY, left: this.mystyle.offsetX }"
             class="container"
